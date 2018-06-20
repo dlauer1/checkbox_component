@@ -7,7 +7,11 @@ const drinklist = [
   'Sprite',
   'Coke',
   'Dr Pepper',
-  'Root Beer'
+  'Root Beer',
+  'a',
+  'b',
+  'c',
+  'd'
 ]
 
 class App extends Component {
@@ -46,40 +50,28 @@ class App extends Component {
     );
   }
 
+  //function called on checkbox click
   onCheckBoxClick = (e)=> {
+    //the checkbox that was clicked, was previously unchecked
     if(this.state[e.target.id] === false) {
-      console.log("clicked new")
-    } else {
-      console.log("clicked old")
+            //before toggling the checkbox, check all other checkboxes to make sure theyre also unchecked
+            for (var key in this.state) {
+                  //if we found a checkbox that is checked, then uncheck it
+                  if (this.state[key] === true) {
+                    //uncheck it here
+                    this.setState({
+                      [key]: false
+                    })
+                  }
+            }
 
+            //now that we have made sure nothing else is checked, toggle the currently clicked check box
+            this.setState({[e.target.id]: true})
+            //go through app state, look for any drink that is true, and set to false
+    //the checkbox that was clicked, was previously checked and same thing was checked
+    } else {
+            this.setState({[e.target.id]: false})
     }
-    
-    if (e.target.id === 'Sprite') {
-      this.setState({Sprite: true})
-      this.setState({Coke: false})
-      this.setState({'Dr Pepper': false})
-      this.setState({'Root Beer': false})
-    } 
-    if(e.target.id === 'Coke') {
-      this.setState({Coke: true})
-      this.setState({Sprite: false})
-      this.setState({'Dr Pepper': false})
-      this.setState({'Root Beer': false})
-    }
-    if(e.target.id === 'Dr Pepper') {
-      this.setState({'Dr Pepper': true})
-      this.setState({Sprite: false})
-      this.setState({Coke: false})
-      this.setState({'Root Beer': false})
-    }
-    if(e.target.id === 'Root Beer') {
-     this.setState({'Root Beer': true})
-      this.setState({Sprite: false})
-      this.setState({Coke: false})
-      this.setState({'Dr Pepper': false})
-    }
-    console.log(e.target.id);
-    
   }
 }
 
