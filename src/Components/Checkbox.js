@@ -1,5 +1,5 @@
 import React from 'react';
-import Pic from '../drinkpic.png'
+import Pic from '../spritepic.png'
 
 const Checkbox = (props) =>
     <div>

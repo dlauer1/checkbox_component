@@ -8,10 +8,6 @@ const drinklist = [
   'Coke',
   'Dr Pepper',
   'Root Beer',
-  'a',
-  'b',
-  'c',
-  'd'
 ]
 
 class App extends Component {
@@ -64,7 +60,6 @@ class App extends Component {
                     })
                   }
             }
-
             //now that we have made sure nothing else is checked, toggle the currently clicked check box
             this.setState({[e.target.id]: true})
             //go through app state, look for any drink that is true, and set to false
