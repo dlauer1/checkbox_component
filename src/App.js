@@ -6,7 +6,7 @@ import logo from './logo.svg';
 const drinklist = [
   'Sprite',
   'Coke',
-  'DrPepper',
+  'Dr Pepper',
   'Root Beer'
 ]
 
@@ -57,17 +57,26 @@ class App extends Component {
     if (e.target.id === 'Sprite') {
       this.setState({Sprite: true})
       this.setState({Coke: false})
-      this.setState({DrPepper: false})
+      this.setState({'Dr Pepper': false})
+      this.setState({'Root Beer': false})
     } 
     if(e.target.id === 'Coke') {
       this.setState({Coke: true})
       this.setState({Sprite: false})
-      this.setState({DrPepper: false})
+      this.setState({'Dr Pepper': false})
+      this.setState({'Root Beer': false})
     }
-    if(e.target.id === 'DrPepper') {
-      this.setState({DrPepper: true})
+    if(e.target.id === 'Dr Pepper') {
+      this.setState({'Dr Pepper': true})
       this.setState({Sprite: false})
       this.setState({Coke: false})
+      this.setState({'Root Beer': false})
+    }
+    if(e.target.id === 'Root Beer') {
+     this.setState({'Root Beer': true})
+      this.setState({Sprite: false})
+      this.setState({Coke: false})
+      this.setState({'Dr Pepper': false})
     }
     console.log(e.target.id);
     
