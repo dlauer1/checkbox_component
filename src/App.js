@@ -11,7 +11,14 @@ const drinklist = [
   'Sprite',
   'Coke',
   'Dr Pepper',
-  'Root Beer',
+  'Root Beer'
+]
+
+const imagelist = [
+  Sprite,
+  Coke,
+  DrPepper,
+  RootBeer
 ]
 
 class App extends Component {
@@ -31,9 +38,13 @@ class App extends Component {
 
   render() {
 
-    const checkboxes = drinklist.map((el) => {
-      return <Checkbox clicked={this.onCheckBoxClick} isChecked={this.state[el]} id={el}/>
-    })
+    const checkboxes = drinklist.map((el,i) => {
+      return (
+      <div className='flex-img' key={i}>
+        <img src= {imagelist[i]} alt={el}/>
+        <Checkbox clicked={this.onCheckBoxClick} isChecked={this.state[el]} id={el}/>
+      </div>
+    )})
 
     return (
       <div className="App">
@@ -44,16 +55,15 @@ class App extends Component {
         <p className="App-intro">
           Please select a beverage and fill out the form to receive your drink.
         </p>
-       <div className='flex-container'>
-       <img src= {Sprite} className="flex-img" alt="Sprite"/>
-       <img src= {Coke} className="flex-img" alt="Coke"/>
-       <img src= {DrPepper} className="flex-img" alt="Dr Pepper"/>
-       <img src= {RootBeer} className="flex-img" alt="Root Beer"/>
-       </div>
-       <div className='flex-box'>
+        {/* <div className='flex-container'>
+          <img src= {Sprite} className="flex-img" alt="Sprite"/>
+          <img src= {Coke} className="flex-img" alt="Coke"/>
+          <img src= {DrPepper} className="flex-img" alt="Dr Pepper"/>
+          <img src= {RootBeer} className="flex-img" alt="Root Beer"/>
+        </div> */}
+        <div className='flex-container'>
           {checkboxes}
-          </div>
-        
+        </div>
       </div>
     );
   }

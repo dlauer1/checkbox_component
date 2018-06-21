@@ -32,21 +32,22 @@
 
 .flex-container {
   display: flex;
-  height: 180px;
   align-items: flex-start;
-  justify-content: space-around;
-  background-color: rgb(252, 252, 252);
+  justify-content: space-evenly;
+  flex-direction: row;
 }
 
 .flex-box {
   display: flex;
-  background-color: rgb(247, 247, 247);
+  background-color: rgb(40, 165, 57);
   flex-flow: row;
   justify-content: space-around;
 }
 
 .flex-img {
-  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   margin: 10px;
 }
 
