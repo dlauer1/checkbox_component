@@ -19,7 +19,7 @@
 }
 
 .App-intro {
-  font-size: large;
+  font-size: 1.5em;
 }
 
 .Drink-selection {
@@ -28,6 +28,26 @@
 
 .Checkbox {
   font-size: 2em;
+}
+
+.flex-container {
+  display: flex;
+  height: 180px;
+  align-items: flex-start;
+  justify-content: space-around;
+  background-color: rgb(252, 252, 252);
+}
+
+.flex-box {
+  display: flex;
+  background-color: rgb(247, 247, 247);
+  flex-flow: row;
+  justify-content: space-around;
+}
+
+.flex-img {
+  align-items: flex-start;
+  margin: 10px;
 }
 
 @keyframes App-logo-spin {
