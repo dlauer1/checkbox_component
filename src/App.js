@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Checkbox from'./Components/Checkbox';
+import OrderForm from'./Components/OrderForm';
 import logo from './logo.svg';
 import Sprite from './spritepic.png'
 import Coke from './cokepic.png'
@@ -55,14 +56,11 @@ class App extends Component {
         <p className="App-intro">
           Please select a beverage and fill out the form to receive your drink.
         </p>
-        {/* <div className='flex-container'>
-          <img src= {Sprite} className="flex-img" alt="Sprite"/>
-          <img src= {Coke} className="flex-img" alt="Coke"/>
-          <img src= {DrPepper} className="flex-img" alt="Dr Pepper"/>
-          <img src= {RootBeer} className="flex-img" alt="Root Beer"/>
-        </div> */}
         <div className='flex-container'>
           {checkboxes}
+        </div>
+        <div>
+          <OrderForm />
         </div>
       </div>
     );
