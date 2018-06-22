@@ -29,9 +29,6 @@ class OrderForm extends Component {
                         </input>< br/>
                         <button type="submit">Order</button>
                     </form>
-                    <div>
-                        {/* <DrinkOrder entries={this.state.handleChange}/> */}
-                        </div>
                 </div>
             </div>
         )
