@@ -4,30 +4,29 @@ class OrderForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            first: '',
-            last: '',
-            seat: ''
+            value: ''
         };
-        
+
         this.handleChange = this.handleChange.bind(this);
     }
 
     handleChange(e) {
-        this.setState({[e.target.name]: e.target.value});
-        };
-   
+        this.setState({value: e.target.value})
+        //console.log(e.target.value);
+    }
+      
     render() {
         return(
             <div className="orderListMain">
                 <div className="header">
-                    <form onSubmit={this.handleChange}>
-                        <input type="text" name="first" onChange={this.handleChange} placeholder="First name">
+                    <form >
+                        <input type="text" name="value" value={this.state.value} onChange={this.handleChange} placeholder="First name">
                         </input>< br/>
-                        <input type="text" name="last" onChange={this.handleChange} placeholder="Last name">
+                        <input type="text" name="value" onSubmit={this.state.value} onChange={this.handleChange} placeholder="Last name">
                         </input>< br/>
-                        <input type="text" name="seat" onChange={this.handleChange} placeholder="Seat number">
+                        <input type="text" name="value" onSubmit={this.state.value} onChange={this.handleChange} placeholder="Seat Number">
                         </input>< br/>
-                        <button type="submit">Order</button>
+                        <input type="submit" value="Order" onSubmit={this.props.handleSubmit} />
                     </form>
                 </div>
             </div>

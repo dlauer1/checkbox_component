@@ -26,7 +26,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-
+      onSubmit: false
     }
   }
 
@@ -35,6 +35,11 @@ class App extends Component {
       this.setState({[el]: false})
 
     })
+  }
+
+  onSubmit = (e) => {
+    if(this.state[e.onSubmit]===false)
+      this.setState({onSubmit: true})
   }
 
   render() {
@@ -60,8 +65,11 @@ class App extends Component {
           {checkboxes}
         </div>
         <div>
-          <OrderForm />
+          <OrderForm onSubmit={this.onSubmit}/>
         </div>
+        <div>
+          <p></p>
+          </div>
       </div>
     );
   }
@@ -88,6 +96,14 @@ class App extends Component {
             this.setState({[e.target.id]: false})
     }
     console.log(e.target.id)
+  }
+
+  handleSubmit = (e)=> {
+    //this.setState({value: e.target.value});
+  
+  
+     console.log(e.target.value);
+     //e.preventDefault();
   }
 }
 
