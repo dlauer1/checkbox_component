@@ -26,7 +26,10 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      onSubmit: false
+      isSubmitted: false,
+      firstName: '',
+      lastName: '',
+      seatNumber: ''
     }
   }
 
@@ -38,11 +41,24 @@ class App extends Component {
   }
 
   onSubmit = (e) => {
-    if(this.state[e.onSubmit]===false)
-      this.setState({onSubmit: true})
+    if(this.state.isSubmitted===false)
+      this.setState({isSubmitted: true})
+      this.setState({firstName: e.target.children[0].value})
+      this.setState({lastName: e.target.children[2].value})
+      this.setState({seatNumber: e.target.children[4].value})
+      e.preventDefault();   
+       
   }
 
   render() {
+    const submitStuff = this.state.isSubmitted ?
+      <div>
+        <p><strong>Your Order</strong></p>
+        <div>{this.state.firstName}</div>
+        <div>{this.state.lastName}</div>
+        <div>{this.state.seatNumber}</div>
+      </div> :
+      ''
 
     const checkboxes = drinklist.map((el,i) => {
       return (
@@ -67,9 +83,8 @@ class App extends Component {
         <div>
           <OrderForm onSubmit={this.onSubmit}/>
         </div>
-        <div>
-          <p></p>
-          </div>
+        < br/>
+        {submitStuff}
       </div>
     );
   }
@@ -97,14 +112,7 @@ class App extends Component {
     }
     console.log(e.target.id)
   }
-
-  handleSubmit = (e)=> {
-    //this.setState({value: e.target.value});
-  
-  
-     console.log(e.target.value);
-     //e.preventDefault();
-  }
 }
+
 
 export default App;
