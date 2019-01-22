@@ -54,9 +54,8 @@ class App extends Component {
     const submitStuff = this.state.isSubmitted ?
       <div>
         <p><strong>Your Order</strong></p>
-        <div>{this.state.firstName}</div>
-        <div>{this.state.lastName}</div>
-        <div>{this.state.seatNumber}</div>
+        <div>Customer: {this.state.firstName + " " + this.state.lastName}</div>
+        <div>Seat Number: {this.state.seatNumber}</div>
       </div> :
       ''
 
